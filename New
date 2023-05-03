@@ -1,0 +1,53 @@
+local player = game.Players.LocalPlayer
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "OptionsGui"
+gui.Parent = player.PlayerGui
+
+local frame = Instance.new("Frame")
+frame.Name = "ButtonsFrame"
+frame.Size = UDim2.new(0, 150, 0, 90)
+frame.Position = UDim2.new(0.5, -75, 0.5, -45)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BackgroundTransparency = 0.5
+frame.Parent = gui
+
+local flyButton = Instance.new("TextButton")
+flyButton.Name = "GravityButton"
+flyButton.Size = UDim2.new(0, 140, 0, 30)
+flyButton.Position = UDim2.new(0.05, 0, 0.1, 0)
+flyButton.BackgroundColor3 = Color3.new(1, 1, 1)
+flyButton.Text = "Gravity"
+flyButton.Parent = frame
+
+local printButton = Instance.new("TextButton")
+printButton.Name = "Execute"
+printButton.Size = UDim2.new(0, 140, 0, 30)
+printButton.Position = UDim2.new(0.05, 0, 0.4, 0)
+printButton.BackgroundColor3 = Color3.new(1, 1, 1)
+  printButton.Text = "Vxpe"
+printButton.Parent = frame
+
+local speedButton = Instance.new("TextButton")
+speedButton.Name = "speedButton"
+speedButton.Size = UDim2.new(0, 140, 0, 30)
+speedButton.Position = UDim2.new(0.05, 0, 0.7, 0)
+speedButton.BackgroundColor3 = Color3.new(1, 1, 1)
+speedButton.Text = "Nspeed"
+speedButton.Parent = frame
+
+Gravity.MouseButton1Click:Connect(function()
+       lowGravityButton.MouseButton1Click:Connect(function()
+    game.Workspace.Gravity = 180
+end)
+
+Execute.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end)
+
+speedButton.MouseButton1Click:Connect(function()
+    local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid.WalkSpeed = 25
+    end
+end)
